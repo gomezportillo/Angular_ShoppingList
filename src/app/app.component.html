@@ -1,10 +1,10 @@
-<app-navbar></app-navbar>
+<app-navbar (featureSelected)="onNavigate($event)"></app-navbar>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div style="text-align:center">
-        <app-recipes></app-recipes>
-        <app-shopping-list></app-shopping-list>
+        <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+        <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
       </div>
     </div>
   </div>
