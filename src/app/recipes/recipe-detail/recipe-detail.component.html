@@ -21,7 +21,11 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    Ingredients
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} x{{ ingredient.amount }}
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -30,7 +34,7 @@
 <div class="row">
   <div class="col-md-12">
     <p>
-      <button type="submit" class="btn btn-success">Add to shooping list</button>
+      <button type="submit" class="btn btn-success" (click)="onAddToShoppingList()">Add to shooping list</button>
     </p>
     <p>
       <button type="button" class="btn btn-primary">Edit recipe</button>
